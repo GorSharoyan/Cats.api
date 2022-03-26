@@ -1,0 +1,7 @@
+.selector{
+    display:flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: baseline;
+   
+}

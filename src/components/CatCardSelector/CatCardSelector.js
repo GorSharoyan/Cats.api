@@ -7,6 +7,9 @@ import { fetchCategory } from "../../services/fetch.service";
 import Button from "../Button/Button";
 import CatCardGenerator from "../CatCardGenerator/CatCardGenerator";
 
+//UI
+import "./CatCardSelector.css";
+
 export default function CatCardSelector() {
   const [fetchedCategories, setFetchedCategories] = useState([]);
   const [selectedData, setSelectedData] = useState({
@@ -36,6 +39,9 @@ export default function CatCardSelector() {
   return (
     <div>
       <div className="selector">
+        <div>
+          <h4>Select Cat :</h4>
+        </div>
         <div>
           <select onChange={handleCategorySelection}>
             {fetchedCategories.map((category) => {

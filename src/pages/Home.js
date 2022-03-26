@@ -6,9 +6,7 @@ import CatCardSelector from "../components/CatCardSelector/CatCardSelector";
 export default function Home() {
   return (
     <div>
-      <>
-        <CatCardSelector />
-      </>
+      <CatCardSelector />
     </div>
   );
 }
