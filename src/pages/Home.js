@@ -3,9 +3,12 @@ import React from "react";
 // components
 import CatCardSelector from "../components/CatCardSelector/CatCardSelector";
 
+//UI
+import "./Home.css";
+
 export default function Home() {
   return (
-    <div>
+    <div className="contianter">
       <CatCardSelector />
     </div>
   );
