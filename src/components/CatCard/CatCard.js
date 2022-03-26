@@ -2,12 +2,9 @@ import React from "react";
 
 import "./CatCard.css";
 
-export default function CatCard({ catName, catImage }) {
+export default function CatCard({ catImage }) {
   return (
     <div className="card">
-      <div>
-        <h4>{catName}</h4>
-      </div>
       <div>
         <img className="image" src={catImage} />
       </div>

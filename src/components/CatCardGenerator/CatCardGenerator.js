@@ -21,11 +21,7 @@ export default function CatCardGenerator({ qty, categoryId }) {
   return (
     <div className="generator">
       {fetchedCats.map((cat) => {
-        return (
-          <div className="element">
-            <CatCard key={cat.id} catImage={cat.url} />
-          </div>
-        );
+        return <CatCard key={cat.id} catImage={cat.url} />;
       })}
     </div>
   );
