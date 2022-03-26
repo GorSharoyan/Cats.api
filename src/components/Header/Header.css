@@ -1,6 +1,10 @@
 .header {
     background-color: #2d4ea8;
-    padding: 20px;
-    /* position: sticky;
-    top: 0; */
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid white;
+}
+.headerComponent{
+    padding: 2px;
 }
