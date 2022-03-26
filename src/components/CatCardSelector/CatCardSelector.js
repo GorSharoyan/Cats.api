@@ -3,6 +3,9 @@ import React, { useState, useEffect } from "react";
 //services
 import { fetchCategory } from "../../services/fetch.service";
 
+//components
+import Button from "../Button/Button";
+
 export default function CatCardSelector() {
   const [fetchedCategories, setFetchedCategories] = useState([]);
 
@@ -11,6 +14,11 @@ export default function CatCardSelector() {
       setFetchedCategories(categories);
     });
   }, [fetchedCategories]);
+
+  ///event handlers
+  const handleClick = () => {
+    console.log("click");
+  };
 
   return (
     <div>
@@ -23,6 +31,7 @@ export default function CatCardSelector() {
           );
         })}
       </select>
+      <Button buttonText={"+10"} buttonHandler={handleClick} />
     </div>
   );
 }

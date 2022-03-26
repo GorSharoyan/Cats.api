@@ -1,5 +1,15 @@
 import React from "react";
 
+// components
+import CatCardSelector from "../components/CatCardSelector/CatCardSelector";
+
 export default function Home() {
-  return <div>Home Page</div>;
+  return (
+    <div>
+      Home Page
+      <>
+        <CatCardSelector />
+      </>
+    </div>
+  );
 }
