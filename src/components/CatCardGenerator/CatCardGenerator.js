@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 
 //components
 import CatCard from "../CatCard/CatCard";
-import CatCardSelector from "../CatCardSelector/CatCardSelector";
+// import CatCardSelector from "../CatCardSelector/CatCardSelector";
 
 //services
 import fetchData from "../../services/fetch.service";
+
+//UI
+import "./CatCardGenerator.css";
 
 export default function CatCardGenerator({ qty, categoryId }) {
   const [fetchedCats, setFetchedCats] = useState([]);
@@ -17,7 +20,7 @@ export default function CatCardGenerator({ qty, categoryId }) {
   }, [qty, categoryId]);
 
   return (
-    <div>
+    <div className="generator">
       {fetchedCats.map((cat) => {
         return <CatCard catName={cat.name} catImage={cat.url} />;
       })}
