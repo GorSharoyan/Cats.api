@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+//components
+import CatCard from "../CatCard/CatCard";
+
 export default function CatCardGenerator() {
   const [fetchedCats, setFetchedCats] = useState([]);
   return (
