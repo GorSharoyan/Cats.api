@@ -29,11 +29,25 @@ export default function CatCardSelector() {
       categoryId: e.target.value
     });
   };
-  const handleQuantitySelection = () => {
+  const handleIncrementQuantity = () => {
     setSelectedData({
       ...selectedData,
       qty: (selectedData.qty += 10)
     });
+  };
+
+  const handleDecrementQuantity = () => {
+    if (selectedData.qty === 10) {
+      setSelectedData({
+        ...selectedData,
+        qty: (selectedData.qty = 10)
+      });
+    } else {
+      setSelectedData({
+        ...selectedData,
+        qty: (selectedData.qty -= 10)
+      });
+    }
   };
 
   return (
@@ -54,7 +68,10 @@ export default function CatCardSelector() {
           </select>
         </div>
         <div>
-          <Button buttonText={"+10"} buttonHandler={handleQuantitySelection} />
+          <Button buttonText={"+10"} buttonHandler={handleIncrementQuantity} />
+        </div>
+        <div>
+          <Button buttonText={"-10"} buttonHandler={handleDecrementQuantity} />
         </div>
       </div>
       <div className="generator">

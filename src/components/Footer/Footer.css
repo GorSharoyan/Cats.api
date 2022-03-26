@@ -6,3 +6,9 @@
     padding: 20px;
     height: 100px;
 }
+.list{
+    list-style: "";
+    position: fixed;
+    bottom: 0px ;
+    left: 0px
+}
