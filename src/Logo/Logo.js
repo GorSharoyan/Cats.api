@@ -6,10 +6,10 @@ import logoAsset from "../assets/logoAsset.png";
 //UI
 import "./Logo.css";
 
-export default function Logo() {
+export default function Logo({ assetUrl }) {
   return (
     <div>
-      <img className="logo" src={logoAsset} alt="logo" />
+      <img className="logo" src={assetUrl} alt="logo" />
     </div>
   );
 }

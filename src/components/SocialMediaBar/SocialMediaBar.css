@@ -1,0 +1,9 @@
+.socialMediaBar{
+    display: flex;
+    flex-direction: row;
+    margin-right: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 25px;
+}
