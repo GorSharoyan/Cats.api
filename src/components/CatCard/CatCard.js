@@ -1,13 +1,14 @@
 import React from "react";
 
 export default function CatCard({ catName, catImage }) {
-  return;
-  <div>
+  return (
     <div>
-      <h4>{catName}</h4>
+      <div>
+        <h4>{catName}</h4>
+      </div>
+      <div>
+        <img src={catImage} />
+      </div>
     </div>
-    <div>
-      <img src={catImage} />
-    </div>
-  </div>;
+  );
 }

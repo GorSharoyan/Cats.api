@@ -5,6 +5,7 @@ import { fetchCategory } from "../../services/fetch.service";
 
 //components
 import Button from "../Button/Button";
+import CatCardGenerator from "../CatCardGenerator/CatCardGenerator";
 
 export default function CatCardSelector() {
   const [fetchedCategories, setFetchedCategories] = useState([]);
@@ -17,7 +18,7 @@ export default function CatCardSelector() {
     fetchCategory().then((categories) => {
       setFetchedCategories(categories);
     });
-  }, [fetchedCategories]);
+  }, [selectedData]);
 
   const handleCategorySelection = (e) => {
     setSelectedData({
@@ -31,28 +32,30 @@ export default function CatCardSelector() {
       qty: (selectedData.qty += 10)
     });
   };
-  const handleSubmit = () => {
-    console.log(selectedData);
-  };
 
   return (
     <div>
-      <div>
-        <select onChange={handleCategorySelection}>
-          {fetchedCategories.map((category) => {
-            return (
-              <option key={category.id} value={category.id}>
-                {category.name}
-              </option>
-            );
-          })}
-        </select>
+      <div className="selector">
+        <div>
+          <select onChange={handleCategorySelection}>
+            {fetchedCategories.map((category) => {
+              return (
+                <option key={category.id} value={category.id}>
+                  {category.name}
+                </option>
+              );
+            })}
+          </select>
+        </div>
+        <div>
+          <Button buttonText={"+10"} buttonHandler={handleQuantitySelection} />
+        </div>
       </div>
-      <div>
-        <Button buttonText={"+10"} buttonHandler={handleQuantitySelection} />
-      </div>
-      <div>
-        <Button buttonText={"Submit"} buttonHandler={handleSubmit} />
+      <div className="generator">
+        <CatCardGenerator
+          categoryId={selectedData.categoryId}
+          qty={selectedData.qty}
+        />
       </div>
     </div>
   );
