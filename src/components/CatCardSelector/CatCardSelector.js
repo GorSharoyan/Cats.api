@@ -58,6 +58,7 @@ export default function CatCardSelector() {
         </div>
         <div>
           <select onChange={handleCategorySelection}>
+            <option selected="selected"> </option>
             {fetchedCategories.map((category) => {
               return (
                 <option key={category.id} value={category.id}>
