@@ -1,8 +1,8 @@
 # Task Aim 
 
-Complete this tusk using React/React Router .\
-Hope this UI better than i think it is :D :D .\
-Thanks for thime dedicated ! 
+Completed this task using React/React Router .\
+Hope this UI is better than I think it is :D :D .\
+Thanks for the time dedicated ! 
 
 
 
