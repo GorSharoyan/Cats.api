@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./Header.css";
+
 export default function Header() {
-  return <div className="header">Custom Header</div>;
+  return <header className="header">Cats.API</header>;
 }
