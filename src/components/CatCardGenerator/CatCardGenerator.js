@@ -7,14 +7,14 @@ import CatCardSelector from "../CatCardSelector/CatCardSelector";
 //services
 import fetchData from "../../services/fetch.service";
 
-export default function CatCardGenerator(selectedData) {
+export default function CatCardGenerator({ qty, categoryId }) {
   const [fetchedCats, setFetchedCats] = useState([]);
 
   useEffect(() => {
-    fetchData(selectedData.qty, selectedData.categoryId).then((cats) => {
+    fetchData(qty, categoryId).then((cats) => {
       setFetchedCats(cats);
     });
-  }, [selectedData]);
+  }, [qty, categoryId]);
 
   return (
     <div>
