@@ -8,6 +8,10 @@ import Button from "../Button/Button";
 
 export default function CatCardSelector() {
   const [fetchedCategories, setFetchedCategories] = useState([]);
+  const [selectedData, setSelectedData] = useState({
+    categoryId: "",
+    qty: 10
+  });
 
   useEffect(() => {
     fetchCategory().then((categories) => {
@@ -15,23 +19,41 @@ export default function CatCardSelector() {
     });
   }, [fetchedCategories]);
 
-  ///event handlers
-  const handleClick = () => {
-    console.log("click");
+  const handleCategorySelection = (e) => {
+    setSelectedData({
+      ...selectedData,
+      categoryId: e.target.value
+    });
+  };
+  const handleQuantitySelection = () => {
+    setSelectedData({
+      ...selectedData,
+      qty: (selectedData.qty += 10)
+    });
+  };
+  const handleSubmit = () => {
+    console.log(selectedData);
   };
 
   return (
     <div>
-      <select>
-        {fetchedCategories.map((category) => {
-          return (
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>
-          );
-        })}
-      </select>
-      <Button buttonText={"+10"} buttonHandler={handleClick} />
+      <div>
+        <select onChange={handleCategorySelection}>
+          {fetchedCategories.map((category) => {
+            return (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            );
+          })}
+        </select>
+      </div>
+      <div>
+        <Button buttonText={"+10"} buttonHandler={handleQuantitySelection} />
+      </div>
+      <div>
+        <Button buttonText={"Submit"} buttonHandler={handleSubmit} />
+      </div>
     </div>
   );
 }
